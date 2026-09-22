@@ -1,0 +1,27 @@
+name: Update events
+
+on:
+  schedule:
+    - cron: "0 11,15,19,23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image resizer
+        run: pip install --quiet pillow
+      - name: Refresh schedule and logos
+        env:
+          ICS_URL: ${{ secrets.ICS_URL }}
+        run: |
+          git config user.name  "Tiger Events Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python update_events.py

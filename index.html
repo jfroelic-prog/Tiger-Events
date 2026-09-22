@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiger Events</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --ink:#0d0b09;
+    --ink-2:#16120c;
+    --orange:#f26a21;
+    --orange-dim:#93400f;
+    --cream:#f5efe5;
+    --muted:#9a9084;
+    --hair:#2b241c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{
+    /* built for an 8.5x11 portrait zone; scales to whatever size Carousel gives it */
+    font-size:min(2.55vw, 1.97vh);
+    height:100%;
+  }
+  body{
+    background:var(--ink);
+    color:var(--cream);
+    font-family:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;
+    height:100%; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    flex:0 0 auto;
+    padding:1.6rem 2rem 1.3rem;
+    display:flex; align-items:center; gap:1.2rem;
+    border-bottom:1px solid var(--hair);
+    position:relative; overflow:hidden;
+  }
+  /* one tiger-stripe cut in the corner */
+  header::before{
+    content:""; position:absolute; top:0; right:0; height:100%; width:11rem;
+    background:linear-gradient(-62deg,
+      var(--orange) 0 .7rem, transparent .7rem 1.9rem,
+      var(--orange-dim) 1.9rem 2.45rem, transparent 2.45rem);
+    opacity:.85;
+  }
+  .schoolmark{height:5rem; width:auto; display:block; flex:0 0 auto}
+  .wordmark{line-height:.95; flex:1 1 auto}
+  .wordmark .big{
+    font-family:Anton,Impact,sans-serif; white-space:nowrap;
+    font-size:3.6rem; letter-spacing:.015em;
+    color:var(--cream); text-transform:uppercase;
+  }
+  .wordmark .big em{font-style:normal; color:var(--orange)}
+  .wordmark .small{
+    font-weight:600; letter-spacing:.24em; margin-top:.4rem;
+    font-size:.95rem; color:var(--muted); text-transform:uppercase;
+  }
+  .clock{
+    position:relative; z-index:1; flex:0 0 auto; align-self:flex-start;
+    font-family:Anton,Impact,sans-serif; margin-right:3.4rem;
+    font-size:1.7rem; color:var(--cream); font-variant-numeric:tabular-nums;
+  }
+  .clock sub{font-size:.8rem; vertical-align:baseline; color:var(--orange); margin-left:.12rem}
+
+  /* ---------- today ---------- */
+  main{flex:1 1 auto; min-height:0; display:flex; flex-direction:column; padding:1.6rem 2rem 0}
+  .dayhead{
+    flex:0 0 auto;
+    display:flex; align-items:baseline; gap:1rem; flex-wrap:wrap;
+    padding-bottom:.8rem;
+    border-bottom:.3rem solid var(--orange);
+  }
+  .dayhead .rel{
+    font-family:Anton,Impact,sans-serif;
+    font-size:4.2rem; line-height:1; letter-spacing:.02em; text-transform:uppercase;
+    color:var(--orange);
+  }
+  .dayhead .full{
+    font-weight:600; font-size:1.6rem; color:var(--muted);
+    text-transform:uppercase; letter-spacing:.12em;
+  }
+
+  /* the board shrinks to fit: every game is always on this one page */
+  .board{flex:1 1 auto; min-height:0; overflow:hidden; padding-bottom:1rem}
+  .fit{transform-origin:top left}
+  .row{
+    display:grid;
+    grid-template-columns:6.4rem auto 1fr;
+    align-items:center; column-gap:1.4rem;
+    padding:1.05rem .6rem;
+    border-bottom:1px solid var(--hair);
+  }
+  .row:nth-child(even){background:var(--ink-2)}
+  .time{
+    font-family:Anton,Impact,sans-serif; line-height:.95;
+    color:var(--cream); font-variant-numeric:tabular-nums; text-align:right;
+  }
+  .time .hm{font-size:2.7rem; display:block}
+  .time .ampm{font-size:1.1rem; color:var(--orange); letter-spacing:.1em; display:block; margin-top:.2rem}
+  .time.allday{font-size:1.4rem; color:var(--orange); letter-spacing:.06em; text-transform:uppercase}
+
+  /* matchup: our mark  vs  their mark, each on a light disc so every logo reads */
+  .matchup{display:flex; align-items:center; gap:.55rem}
+  .matchup .v{
+    font-family:Anton,Impact,sans-serif; font-size:1.25rem; color:var(--orange);
+    text-transform:uppercase;
+  }
+  .crest{
+    width:4.9rem; height:4.9rem; border-radius:50%;
+    background:var(--cream);
+    display:flex; align-items:center; justify-content:center;
+    padding:.6rem; flex:0 0 auto;
+  }
+  .crest img{max-width:100%; max-height:100%; display:block}
+  .crest .mono{font-family:Anton,Impact,sans-serif; font-size:2.1rem; line-height:1; color:var(--ink)}
+
+  .meta{min-width:0}
+  .meta .sport{
+    font-weight:700; font-size:1.1rem; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--orange);
+  }
+  .meta .opp{
+    font-family:Anton,Impact,sans-serif; font-weight:400;
+    font-size:2.3rem; line-height:1.04; color:var(--cream);
+    text-wrap:balance;
+  }
+  .meta .venue{
+    font-weight:500; font-size:1.2rem; color:var(--muted); margin-top:.2rem;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+
+  /* a light day gets the space instead: bigger, stacked, centered */
+  .fit.few{display:flex; flex-direction:column; justify-content:space-evenly; height:100%}
+  .fit.few .row{
+    grid-template-columns:auto auto; justify-content:center; row-gap:.9rem;
+    border-bottom:0; background:transparent; zoom:1.4; padding:1rem .6rem;
+  }
+  .fit.few .meta{grid-column:1 / -1; text-align:center}
+
+  /* ---------- coming up (fills leftover space only) ---------- */
+  .aheadhead{display:flex; align-items:center; gap:.9rem; margin:1.4rem 0 .2rem}
+  .aheadhead .lbl{
+    font-weight:700; font-size:1rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--muted);
+  }
+  .aheadhead .line{flex:1; height:1px; background:var(--hair)}
+  .dgroup .dlabel{
+    font-family:Anton,Impact,sans-serif; font-size:1.55rem; line-height:1;
+    color:var(--orange); text-transform:uppercase; letter-spacing:.03em;
+    margin:.9rem 0 .35rem;
+  }
+  .row.mini{
+    grid-template-columns:5.2rem auto 1fr; column-gap:1rem;
+    padding:.45rem .6rem;
+  }
+  .row.mini .time .hm{font-size:1.6rem}
+  .row.mini .time .ampm{font-size:.8rem; margin-top:.1rem}
+  .row.mini .crest{width:3.3rem; height:3.3rem; padding:.35rem}
+  .row.mini .crest .mono{font-size:1.4rem}
+  .row.mini .matchup{gap:.4rem}
+  .row.mini .matchup .v{font-size:.9rem}
+  .row.mini .meta .sport{font-size:.85rem; letter-spacing:.1em}
+  .row.mini .meta .opp{font-size:1.45rem}
+  .row.mini .meta .venue{font-size:.95rem; margin-top:.1rem}
+
+  /* a quiet line when today is empty but later days fill the page */
+  .nonetoday{
+    display:flex; align-items:center; gap:.9rem; padding:1.1rem .2rem .2rem;
+  }
+  .nonetoday .txt{
+    font-family:Anton,Impact,sans-serif; font-size:1.9rem; color:var(--cream);
+    text-transform:uppercase; letter-spacing:.03em;
+  }
+  .nonetoday .line{flex:1; height:1px; background:var(--hair)}
+
+  /* ---------- nothing today ---------- */
+  .empty{
+    flex:1 1 auto;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.2rem;
+    text-align:center; padding:2rem;
+  }
+  .empty img{height:11rem; width:auto}
+  .empty .msg{
+    font-family:Anton,Impact,sans-serif;
+    font-size:3.2rem; text-transform:uppercase; letter-spacing:.03em; color:var(--cream);
+  }
+  .empty .sub{color:var(--muted); font-weight:500; font-size:1.6rem}
+  .empty .next{
+    margin-top:.6rem; font-weight:600; font-size:1.5rem; color:var(--orange);
+    letter-spacing:.06em; text-transform:uppercase;
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    flex:0 0 auto;
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    padding:.8rem 2rem 1.1rem;
+  }
+  .tagline{font-family:Anton,Impact,sans-serif; font-size:1.3rem; color:var(--orange); letter-spacing:.06em; text-transform:uppercase}
+  .updated{font-size:.95rem; font-weight:600; color:var(--muted); letter-spacing:.08em; text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<header>
+  <img class="schoolmark" src="logos/tech.png" alt="" onerror="this.remove()">
+  <div class="wordmark">
+    <div class="big">Tiger <em>Events</em></div>
+    <div class="small">St. Cloud Tech &middot; Today at Home</div>
+  </div>
+  <div class="clock" id="hdrClock"></div>
+</header>
+
+<main id="stage"></main>
+
+<footer>
+  <div class="tagline">Go Tigers</div>
+  <div class="updated" id="updated"></div>
+</footer>
+
+<script>
+/* ======================= CONFIG ======================= */
+const CONFIG = {
+  FILL_AHEAD: true,            // use leftover space for the next days' events
+  REFRESH_MINUTES: 10,         // how often to re-read events.json
+  NO_EVENTS_TEXT: "No home events today",
+};
+/* ====================================================== */
+
+let FEED = {updated:"", events:[]};
+
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]/g,"");
+function logoSrc(file){ return (window.LOGOS||{})[file] || ("logos/"+file+".png"); }
+function disc(file, initial){
+  return `<span class="crest"><img src="${logoSrc(file)}" alt=""
+    onerror="this.outerHTML='<span class=&quot;mono&quot;>${initial}</span>'"></span>`;
+}
+/* our side: Tech T, or Crush for co-op teams (events.json "us": "tech"|"crush")
+   their side: logos/<opponent slug>.png, monogram if the file is missing       */
+function matchupHTML(ev){
+  const ours = disc(ev.us==="crush" ? "crush" : "tech", "T");
+  const opp=(ev.opponent||"").trim();
+  if(!opp) return `<div class="matchup">${ours}</div>`;
+  return `<div class="matchup">${ours}<span class="v">vs</span>${disc(slug(opp), opp.charAt(0).toUpperCase())}</div>`;
+}
+
+/* ---------- data ---------- */
+function materialize(raw){
+  return raw.map(e=>{
+    const [y,mo,d]=(e.date||"").split("-").map(Number);
+    if(!y) return null;
+    let start, allDay=false;
+    if(e.time){ const [h,mi]=e.time.split(":").map(Number); start=new Date(y,mo-1,d,h,mi); }
+    else { start=new Date(y,mo-1,d); allDay=true; }
+    return {title:e.title, opponent:e.opponent||"", us:e.us||"tech", location:e.location||"", start, allDay};
+  }).filter(Boolean);
+}
+const sameDay = (a,b) => a.toDateString()===b.toDateString();
+
+/* ---------- rendering ---------- */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmtTime = d => {
+  let h=d.getHours(), m=d.getMinutes(), ap=h>=12?"pm":"am";
+  h=h%12||12;
+  return `<span class="hm">${h}:${String(m).padStart(2,"0")}</span><span class="ampm">${ap}</span>`;
+};
+function splitTitle(t){
+  t=t||"Event";
+  let m=t.match(/^(.*?)\s+vs\.?\s+(.+)$/i);
+  if(m) return {sport:m[1], main:m[2]};
+  m=t.match(/^(.*?)\s+[—–]\s+(.+)$/);
+  if(m) return {sport:m[1], main:m[2]};
+  return {sport:"", main:t};
+}
+function rowHTML(ev, size){
+  const time = ev.allDay ? `<div class="time allday">All day</div>`
+                         : `<div class="time">${fmtTime(ev.start)}</div>`;
+  const t = splitTitle(ev.title);
+  return `<div class="row${size==="mini"?" mini":""}">${time}${matchupHTML(ev)}
+    <div class="meta">${t.sport?`<div class="sport">${esc(t.sport)}</div>`:""}
+    <div class="opp">${esc(t.main)}</div>
+    <div class="venue">${esc(ev.location)}</div></div></div>`;
+}
+function dayLabel(d){
+  const today=new Date(); today.setHours(0,0,0,0);
+  const that=new Date(d); that.setHours(0,0,0,0);
+  const diff=Math.round((that-today)/86400000);
+  const nice=d.toLocaleDateString("en-US",{weekday:"long",month:"short",day:"numeric"});
+  return diff===1 ? "Tomorrow &middot; "+nice : nice;
+}
+function groupByDay(events){
+  const groups=[];
+  for(const ev of events){
+    const key=ev.start.toDateString();
+    const last=groups[groups.length-1];
+    if(last && last.key===key) last.events.push(ev);
+    else groups.push({key, date:ev.start, events:[ev]});
+  }
+  return groups;
+}
+
+/* Shrink today's games until they all fit on this one page. */
+function fitToday(){
+  const board=document.querySelector(".board"), fit=document.querySelector(".fit");
+  if(!board||!fit) return;
+  if(fit.classList.contains("few")) return;   // light days are sized up, not down
+  const pad=parseFloat(getComputedStyle(board).paddingBottom)||0;
+  const avail=board.clientHeight-pad-8;   // a hair of slack so rounding can't clip a row
+  fit.style.zoom=1;
+  if(fit.getBoundingClientRect().height<=avail) return;
+  // Text rewraps as it scales, so close in over a few passes rather than guessing once.
+  let k=1;
+  for(let i=0;i<6;i++){
+    const hgt=fit.getBoundingClientRect().height;
+    const next=Math.max(0.4, Math.min(1, k*(avail/hgt)*0.995));
+    if(Math.abs(next-k)<0.004) break;
+    k=next; fit.style.zoom=k;
+  }
+  if(fit.getBoundingClientRect().height>avail) fit.style.zoom=k*0.97;
+}
+
+/* Use whatever room is left for the next days — one whole day at a time,
+   and only while it fits. Today is never shrunk to make room for them. */
+function fillAhead(upcoming){
+  const board=document.querySelector(".board"), ahead=document.getElementById("ahead");
+  if(!CONFIG.FILL_AHEAD || !board || !ahead || !upcoming.length) return;
+  const room=() => board.scrollHeight <= board.clientHeight;
+  if(!room()) return;
+
+  const header=document.createElement("div");
+  header.className="aheadhead";
+  header.innerHTML=`<span class="lbl">Coming up</span><span class="line"></span>`;
+  ahead.appendChild(header);
+  if(!room()){ ahead.replaceChildren(); return; }
+
+  let added=0;
+  for(const g of groupByDay(upcoming)){
+    const block=document.createElement("div");
+    block.className="dgroup";
+    block.innerHTML=`<div class="dlabel">${dayLabel(g.date)}</div>` +
+                    g.events.map(ev=>rowHTML(ev,"mini")).join("");
+    ahead.appendChild(block);
+    if(!room()){ block.remove(); break; }      // didn't fit: stop here
+    added++;
+  }
+  if(!added) ahead.replaceChildren();
+}
+
+function render(){
+  const stage=document.getElementById("stage");
+  const now=new Date();
+  const all=materialize(FEED.events).sort((a,b)=>a.start-b.start);
+  const today=all.filter(e=>sameDay(e.start, now));
+  const upcoming=all.filter(e=>e.start>now && !sameDay(e.start, now));
+
+  const heading=`<div class="dayhead"><span class="rel">Today</span>
+    <span class="full">${now.toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric"})}</span></div>`;
+
+  if(!today.length && !upcoming.length){
+    stage.innerHTML=`${heading}<div class="empty">
+      <img src="${logoSrc('tech')}" alt="" onerror="this.remove()">
+      <div class="msg">${esc(CONFIG.NO_EVENTS_TEXT)}</div>
+      <div class="sub">Catch the Tigers on the road &mdash; schedules at gobound.com</div></div>`;
+  }else{
+    // enlarge a light day only when there is nothing upcoming to show beneath it
+    const few = (today.length && today.length<=2 && !upcoming.length) ? " few" : "";
+    const todayBlock = today.length
+      ? `<div class="fit${few}">${today.map(ev=>rowHTML(ev)).join("")}</div>`
+      : `<div class="fit"><div class="nonetoday"><span class="txt">${esc(CONFIG.NO_EVENTS_TEXT)}</span><span class="line"></span></div></div>`;
+    stage.innerHTML=`${heading}<div class="board">${todayBlock}<div id="ahead"></div></div>`;
+    requestAnimationFrame(()=>{ fitToday(); fillAhead(upcoming); });
+  }
+  document.getElementById("updated").textContent = FEED.updated ? "Updated "+FEED.updated : "";
+}
+
+/* ---------- clock / refresh ---------- */
+function tickClock(){
+  const now=new Date();
+  const t=now.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"});
+  const [hm,ap]=t.split(" ");
+  document.getElementById("hdrClock").innerHTML=`${hm}<sub>${(ap||"").toLowerCase()}</sub>`;
+}
+async function refresh(){
+  try{
+    const res=await fetch("events.json?_="+Date.now(),{cache:"no-store"});
+    if(res.ok) FEED=await res.json();
+  }catch(e){ /* keep showing the last good schedule */ }
+  render();
+}
+tickClock(); setInterval(tickClock, 15000);
+refresh();  setInterval(refresh, CONFIG.REFRESH_MINUTES*60000);
+window.addEventListener("resize", render);
+</script>
+</body>
+</html>

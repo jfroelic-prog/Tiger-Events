@@ -1,22 +1,6 @@
 {
-  "updated": "Thu 10:43 AM",
+  "updated": "Thu 8:08 PM",
   "events": [
-    {
-      "title": "Boys Soccer vs. Alexandria Area",
-      "opponent": "Alexandria Area",
-      "us": "tech",
-      "location": "Tiger Stadium",
-      "date": "2026-09-24",
-      "time": "19:00"
-    },
-    {
-      "title": "Girls Volleyball vs. ROCORI",
-      "opponent": "ROCORI",
-      "us": "tech",
-      "location": "Tech Gym Main Court",
-      "date": "2026-09-24",
-      "time": "19:00"
-    },
     {
       "title": "Football vs. Detroit Lakes",
       "opponent": "Detroit Lakes",
@@ -143,6 +127,22 @@
       "us": "crush",
       "location": "Tiger Stadium",
       "date": "2026-10-08",
+      "time": "19:00"
+    },
+    {
+      "title": "Girls Swimming and Diving \u2014 True Team Section",
+      "opponent": "",
+      "us": "tech",
+      "location": "Pool",
+      "date": "2026-10-09",
+      "time": "14:00"
+    },
+    {
+      "title": "Football vs. Willmar",
+      "opponent": "Willmar",
+      "us": "tech",
+      "location": "Tiger Stadium",
+      "date": "2026-10-09",
       "time": "19:00"
     }
   ]

@@ -1,14 +1,6 @@
 {
-  "updated": "Fri 4:58 PM",
+  "updated": "Fri 8:11 PM",
   "events": [
-    {
-      "title": "Football vs. Detroit Lakes",
-      "opponent": "Detroit Lakes",
-      "us": "tech",
-      "location": "Tiger Stadium",
-      "date": "2026-09-25",
-      "time": "19:00"
-    },
     {
       "title": "Girls Soccer vs. Becker",
       "opponent": "Becker",
@@ -136,6 +128,22 @@
       "location": "Tiger Stadium",
       "date": "2026-10-09",
       "time": "19:00"
+    },
+    {
+      "title": "Girls Swimming and Diving \u2014 True Team Sections",
+      "opponent": "",
+      "us": "tech",
+      "location": "Tech Pool",
+      "date": "2026-10-10",
+      "time": "12:00"
+    },
+    {
+      "title": "Boys Soccer vs. Cloquet/Esko/Carlton",
+      "opponent": "Cloquet/Esko/Carlton",
+      "us": "tech",
+      "location": "Tiger Stadium",
+      "date": "2026-10-10",
+      "time": "15:00"
     }
   ]
 }

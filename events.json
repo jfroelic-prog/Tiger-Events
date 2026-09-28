@@ -1,5 +1,5 @@
 {
-  "updated": "Sat 8:05 PM",
+  "updated": "Sun 8:25 PM",
   "events": [
     {
       "title": "Girls Soccer vs. Albany",
@@ -136,6 +136,14 @@
       "location": "Tiger Stadium",
       "date": "2026-10-10",
       "time": "15:00"
+    },
+    {
+      "title": "Adapted Soccer vs. Zimmerman/Elk River/Rogers",
+      "opponent": "Zimmerman/Elk River/Rogers",
+      "us": "crush",
+      "location": "St. Cloud Apollo High School Gym",
+      "date": "2026-10-12",
+      "time": "16:30"
     }
   ]
 }

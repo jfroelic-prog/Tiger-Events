@@ -1,14 +1,6 @@
 {
-  "updated": "Sun 8:25 PM",
+  "updated": "Tue 11:47 AM",
   "events": [
-    {
-      "title": "Girls Soccer vs. Albany",
-      "opponent": "Albany",
-      "us": "crush",
-      "location": "Tiger Stadium",
-      "date": "2026-09-28",
-      "time": "19:00"
-    },
     {
       "title": "Girls Soccer vs. ROCORI",
       "opponent": "ROCORI",
@@ -144,6 +136,22 @@
       "location": "St. Cloud Apollo High School Gym",
       "date": "2026-10-12",
       "time": "16:30"
+    },
+    {
+      "title": "Adapted Soccer vs. Anoka-Hennepin",
+      "opponent": "Anoka-Hennepin",
+      "us": "crush",
+      "location": "St. Cloud Apollo High School Main Gym",
+      "date": "2026-10-13",
+      "time": "16:30"
+    },
+    {
+      "title": "Girls Swimming and Diving vs. Detroit Lakes",
+      "opponent": "Detroit Lakes",
+      "us": "tech",
+      "location": "Tech Pool",
+      "date": "2026-10-13",
+      "time": "18:00"
     }
   ]
 }

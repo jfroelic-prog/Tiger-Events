@@ -1,22 +1,6 @@
 {
-  "updated": "Tue 11:47 AM",
+  "updated": "Tue 8:50 PM",
   "events": [
-    {
-      "title": "Girls Soccer vs. ROCORI",
-      "opponent": "ROCORI",
-      "us": "crush",
-      "location": "Tiger Stadium",
-      "date": "2026-09-29",
-      "time": "17:00"
-    },
-    {
-      "title": "Boys Soccer vs. St. Cloud Apollo",
-      "opponent": "St. Cloud Apollo",
-      "us": "tech",
-      "location": "Tiger Stadium",
-      "date": "2026-09-29",
-      "time": "19:00"
-    },
     {
       "title": "Girls Tennis vs. Willmar",
       "opponent": "Willmar",
@@ -152,6 +136,14 @@
       "location": "Tech Pool",
       "date": "2026-10-13",
       "time": "18:00"
+    },
+    {
+      "title": "Football vs. Princeton",
+      "opponent": "Princeton",
+      "us": "tech",
+      "location": "Tiger Stadium",
+      "date": "2026-10-14",
+      "time": "19:00"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "Sat 9:24 PM",
+  "updated": "Mon 9:41 PM",
   "events": [
     {
       "title": "Adapted Soccer vs. Monticello/STMA/Buffalo",
@@ -103,6 +103,22 @@
       "us": "tech",
       "location": "Tiger Stadium",
       "date": "2026-10-14",
+      "time": "19:00"
+    },
+    {
+      "title": "Girls Swimming and Diving vs. Sartell",
+      "opponent": "Sartell",
+      "us": "tech",
+      "location": "Tech Pool",
+      "date": "2026-10-20",
+      "time": "18:00"
+    },
+    {
+      "title": "Girls Volleyball vs. Willmar",
+      "opponent": "Willmar",
+      "us": "tech",
+      "location": "Tech Gym Main Court",
+      "date": "2026-10-20",
       "time": "19:00"
     }
   ]

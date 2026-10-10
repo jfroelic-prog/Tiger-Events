@@ -1,22 +1,6 @@
 {
-  "updated": "Fri 6:02 PM",
+  "updated": "Sat 11:06 AM",
   "events": [
-    {
-      "title": "Girls Swimming and Diving \u2014 True Team Section",
-      "opponent": "",
-      "us": "tech",
-      "location": "Pool",
-      "date": "2026-10-09",
-      "time": "14:00"
-    },
-    {
-      "title": "Football vs. Willmar",
-      "opponent": "Willmar",
-      "us": "tech",
-      "location": "Tiger Stadium",
-      "date": "2026-10-09",
-      "time": "16:30"
-    },
     {
       "title": "Girls Swimming and Diving \u2014 True Team Sections",
       "opponent": "",
@@ -53,6 +37,14 @@
       "title": "Girls Soccer vs. ROCORI",
       "opponent": "ROCORI",
       "us": "crush",
+      "location": "Tiger Stadium",
+      "date": "2026-10-13",
+      "time": "16:30"
+    },
+    {
+      "title": "Boys Soccer vs. Little Falls",
+      "opponent": "Little Falls",
+      "us": "tech",
       "location": "Tiger Stadium",
       "date": "2026-10-13",
       "time": "16:30"

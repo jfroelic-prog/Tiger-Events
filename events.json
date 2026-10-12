@@ -1,5 +1,5 @@
 {
-  "updated": "Sat 8:33 PM",
+  "updated": "Mon 3:07 PM",
   "events": [
     {
       "title": "Adapted Soccer vs. Zimmerman/Elk River/Rogers",
@@ -18,18 +18,18 @@
       "time": "16:30"
     },
     {
-      "title": "Girls Soccer vs. ROCORI",
-      "opponent": "ROCORI",
-      "us": "crush",
+      "title": "Boys Soccer vs. Little Falls",
+      "opponent": "Little Falls",
+      "us": "tech",
       "location": "Tiger Stadium",
       "date": "2026-10-13",
       "time": "16:30"
     },
     {
-      "title": "Boys Soccer vs. Little Falls",
-      "opponent": "Little Falls",
-      "us": "tech",
-      "location": "Tiger Stadium",
+      "title": "Girls Soccer vs. ROCORI",
+      "opponent": "ROCORI",
+      "us": "crush",
+      "location": "St. Cloud Apollo High School Michie Stadium",
       "date": "2026-10-13",
       "time": "16:30"
     },

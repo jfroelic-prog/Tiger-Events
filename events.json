@@ -1,14 +1,6 @@
 {
-  "updated": "Mon 3:07 PM",
+  "updated": "Mon 10:21 PM",
   "events": [
-    {
-      "title": "Adapted Soccer vs. Zimmerman/Elk River/Rogers",
-      "opponent": "Zimmerman/Elk River/Rogers",
-      "us": "crush",
-      "location": "St. Cloud Apollo High School Gym",
-      "date": "2026-10-12",
-      "time": "16:30"
-    },
     {
       "title": "Adapted Soccer vs. Anoka-Hennepin",
       "opponent": "Anoka-Hennepin",
@@ -64,6 +56,14 @@
       "location": "Tech Gym Main Court",
       "date": "2026-10-20",
       "time": "19:00"
+    },
+    {
+      "title": "Adapted Soccer vs. Park Center",
+      "opponent": "Park Center",
+      "us": "crush",
+      "location": "St. Cloud Apollo High School Main Gym",
+      "date": "2026-10-27",
+      "time": "16:30"
     }
   ]
 }

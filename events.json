@@ -1,6 +1,14 @@
 {
-  "updated": "Tue 12:56 PM",
+  "updated": "Tue 6:11 PM",
   "events": [
+    {
+      "title": "Adapted Soccer vs. Anoka-Hennepin",
+      "opponent": "Anoka-Hennepin",
+      "us": "crush",
+      "location": "St. Cloud Apollo High School Main Gym",
+      "date": "2026-10-13",
+      "time": "16:30"
+    },
     {
       "title": "Girls Soccer vs. ROCORI",
       "opponent": "ROCORI",
@@ -14,14 +22,6 @@
       "opponent": "Little Falls",
       "us": "tech",
       "location": "Tiger Stadium",
-      "date": "2026-10-13",
-      "time": "16:30"
-    },
-    {
-      "title": "Adapted Soccer vs. Anoka-Hennepin",
-      "opponent": "Anoka-Hennepin",
-      "us": "crush",
-      "location": "St. Cloud Apollo High School Main Gym",
       "date": "2026-10-13",
       "time": "16:30"
     },

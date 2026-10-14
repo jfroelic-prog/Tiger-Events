@@ -1,38 +1,6 @@
 {
-  "updated": "Tue 6:11 PM",
+  "updated": "Wed 10:42 AM",
   "events": [
-    {
-      "title": "Adapted Soccer vs. Anoka-Hennepin",
-      "opponent": "Anoka-Hennepin",
-      "us": "crush",
-      "location": "St. Cloud Apollo High School Main Gym",
-      "date": "2026-10-13",
-      "time": "16:30"
-    },
-    {
-      "title": "Girls Soccer vs. ROCORI",
-      "opponent": "ROCORI",
-      "us": "crush",
-      "location": "St. Cloud Apollo High School Michie Stadium",
-      "date": "2026-10-13",
-      "time": "16:30"
-    },
-    {
-      "title": "Boys Soccer vs. Little Falls",
-      "opponent": "Little Falls",
-      "us": "tech",
-      "location": "Tiger Stadium",
-      "date": "2026-10-13",
-      "time": "16:30"
-    },
-    {
-      "title": "Girls Swimming and Diving vs. Detroit Lakes",
-      "opponent": "Detroit Lakes",
-      "us": "tech",
-      "location": "Tech Pool",
-      "date": "2026-10-13",
-      "time": "18:00"
-    },
     {
       "title": "Football vs. Princeton",
       "opponent": "Princeton",

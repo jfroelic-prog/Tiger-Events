@@ -1,5 +1,5 @@
 {
-  "updated": "Tue 8:17 PM",
+  "updated": "Wed 8:13 PM",
   "events": [
     {
       "title": "Adapted Soccer vs. Park Center",
@@ -7,6 +7,14 @@
       "us": "crush",
       "location": "St. Cloud Apollo High School Main Gym",
       "date": "2026-10-27",
+      "time": "16:30"
+    },
+    {
+      "title": "Adapted Soccer vs. North/Tartan",
+      "opponent": "North/Tartan",
+      "us": "crush",
+      "location": "St. Cloud Apollo High School Main Gym",
+      "date": "2026-11-05",
       "time": "16:30"
     }
   ]

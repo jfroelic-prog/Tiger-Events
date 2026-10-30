@@ -1,11 +1,11 @@
 {
-  "updated": "Wed 9:13 PM",
+  "updated": "Fri 11:56 AM",
   "events": [
     {
       "title": "Adapted Soccer vs. North/Tartan",
       "opponent": "North/Tartan",
       "us": "crush",
-      "location": "St. Cloud Apollo High School Main Gym",
+      "location": "St. Cloud Apollo High School Gym",
       "date": "2026-11-05",
       "time": "16:30"
     },
@@ -15,6 +15,14 @@
       "us": "tech",
       "location": "Tech Pool",
       "date": "2026-11-12",
+      "time": ""
+    },
+    {
+      "title": "Girls Swimming and Diving \u2014 Section 6A Girls Swim Meet",
+      "opponent": "",
+      "us": "tech",
+      "location": "Tech Pool",
+      "date": "2026-11-13",
       "time": ""
     }
   ]

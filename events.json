@@ -1,4 +1,21 @@
 {
-  "updated": "Sat 8:23 PM",
-  "events": []
+  "updated": "Wed 9:58 PM",
+  "events": [
+    {
+      "title": "Boys Basketball vs. Alexandria Area",
+      "opponent": "Alexandria Area",
+      "us": "tech",
+      "location": "Gym Gym-Center Court",
+      "date": "2026-12-03",
+      "time": "19:15"
+    },
+    {
+      "title": "Girls Basketball vs. Sauk Rapids-Rice",
+      "opponent": "Sauk Rapids-Rice",
+      "us": "crush",
+      "location": "St. Cloud Apollo High School Gym",
+      "date": "2026-12-03",
+      "time": "19:15"
+    }
+  ]
 }

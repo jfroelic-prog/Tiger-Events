@@ -1,5 +1,5 @@
 {
-  "updated": "Wed 9:58 PM",
+  "updated": "Thu 9:52 PM",
   "events": [
     {
       "title": "Boys Basketball vs. Alexandria Area",
@@ -16,6 +16,14 @@
       "location": "St. Cloud Apollo High School Gym",
       "date": "2026-12-03",
       "time": "19:15"
+    },
+    {
+      "title": "Competitive Dance \u2014 CLC Dance Team",
+      "opponent": "",
+      "us": "tech",
+      "location": "Tech Gym",
+      "date": "2026-12-04",
+      "time": "19:00"
     }
   ]
 }

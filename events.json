@@ -1,5 +1,5 @@
 {
-  "updated": "Thu 9:52 PM",
+  "updated": "Fri 6:41 PM",
   "events": [
     {
       "title": "Boys Basketball vs. Alexandria Area",
@@ -24,6 +24,14 @@
       "location": "Tech Gym",
       "date": "2026-12-04",
       "time": "19:00"
+    },
+    {
+      "title": "Girls Basketball vs. Simley",
+      "opponent": "Simley",
+      "us": "crush",
+      "location": "Gym Gym-Center Court",
+      "date": "2026-12-05",
+      "time": "14:00"
     }
   ]
 }

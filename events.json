@@ -1,5 +1,5 @@
 {
-  "updated": "Mon 4:27 PM",
+  "updated": "Tue 12:46 AM",
   "events": [
     {
       "title": "Boys Basketball vs. Alexandria Area",
@@ -32,6 +32,14 @@
       "location": "Gym Gym-Center Court",
       "date": "2026-12-05",
       "time": "14:00"
+    },
+    {
+      "title": "Boys Basketball vs. Sartell",
+      "opponent": "Sartell",
+      "us": "tech",
+      "location": "Gym Gym-Center Court",
+      "date": "2026-12-08",
+      "time": "19:15"
     }
   ]
 }

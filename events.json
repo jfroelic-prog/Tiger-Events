@@ -1,5 +1,5 @@
 {
-  "updated": "Tue 12:46 AM",
+  "updated": "Fri 10:31 PM",
   "events": [
     {
       "title": "Boys Basketball vs. Alexandria Area",
@@ -40,6 +40,14 @@
       "location": "Gym Gym-Center Court",
       "date": "2026-12-08",
       "time": "19:15"
+    },
+    {
+      "title": "Girls Gymnastics \u2014 Crush Gymnastics Invitational",
+      "opponent": "",
+      "us": "tech",
+      "location": "Gym",
+      "date": "2026-12-12",
+      "time": "11:15"
     }
   ]
 }
